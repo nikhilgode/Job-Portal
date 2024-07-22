@@ -1,0 +1,35 @@
+﻿
+  @model IEnumerable<JobPortal_New.Modeles.Entites.User>
+@{
+
+    ViewData["Title1"] = "User List1";
+}
+
+<h1>User List</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>UserId</th>
+            <th>UserName</th>
+            <th>UserEmail</th>
+            <th>ContactNumber</th>
+            <th>Gender</th>
+            <th>Roles</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+
+            <tr>
+                <td>@user.UserId</td>
+                <td>@user.UserName</td>
+                <td>@user.UserEmail</td>
+                <td>@user.ContactNumber</td>
+                <td>@user.Gender</td>
+                <td>@user.roles.RoleName.ToString()</td>
+            </tr>
+        }
+    </tbody>
+</table>
